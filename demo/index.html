@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+    <title>lens-ui-dialog Demo</title>
+    <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+    <link rel="import" href="../lens-ui-dialog.html">
+
+    <style>
+    </style>
+  </head>
+
+  <body onclick="clickHandler(event);" unresolved>
+
+    <button data-dialog="plain">plain</button>
+
+    <lens-ui-dialog id="plain">
+      This is a plain dialog
+    </lens-ui-dialog>
+
+    <button data-dialog="delete">with backdrop</button>
+
+    <lens-ui-dialog id="delete" with-backdrop>
+      <p>Hello world!</p>
+      <button data-cancel="delete">cancel</button>
+      <button data-cancel="delete" autofocus>autofocus</button>
+    </lens-ui-dialog>
+
+    <button data-dialog="noescape">no cancel</button>
+    <lens-ui-dialog id="noescape" no-cancel-on-esc-key no-cancel-on-outside-click>
+      <div id="test-parent">
+        <button data-dialog-close="noescape">accept</button>
+        <button data-dialog-cancel="noescape">cancel</button>
+      </div>
+    </lens-ui-dialog>
+
+    <script>
+
+      function clickHandler(e) {
+        checkForDialog(e);
+        checkForClose(e);
+        checkForCancel(e);
+      }
+
+      function checkForDialog(e) {
+        if (!e.target.hasAttribute('data-dialog')) {
+          return;
+        }
+
+        var id = e.target.getAttribute('data-dialog');
+        var dialog = document.getElementById(id);
+        if (dialog) {
+          dialog.open();
+        }
+      }
+
+      function checkForClose(e) {
+        if (!e.target.hasAttribute('data-dialog-close')) {
+          return;
+        } else {
+          var id = e.target.getAttribute('data-dialog-close');
+          var dialog = document.getElementById(id);
+          if (dialog) {
+            dialog.close();
+          }
+        }
+      }
+
+      function checkForCancel(e) {
+        if (!e.target.hasAttribute('data-dialog-cancel')) {
+          return;
+        } else {
+          var id = e.target.getAttribute('data-dialog-cancel');
+          var dialog = document.getElementById(id);
+          if (dialog) {
+            dialog.cancel();
+          }
+        }
+      }
+
+      window.onload = function() {
+
+        document.addEventListener('iron-overlay-closed', function(e) {
+          var target = e.target;
+          var canceled = e.detail.canceled;
+          console.log('canceled: ' + canceled);
+        });
+      }
+
+      </script>
+
+  </body>
+</html>
+
