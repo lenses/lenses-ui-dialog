@@ -2,9 +2,9 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
-    <title>lens-ui-dialog Demo</title>
+    <title>lenses-ui-dialog Demo</title>
     <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
-    <link rel="import" href="../lens-ui-dialog.html">
+    <link rel="import" href="../lenses-ui-dialog.html">
 
     <style>
     </style>
@@ -14,25 +14,25 @@
 
     <button data-dialog="plain">plain</button>
 
-    <lens-ui-dialog id="plain">
+    <lenses-ui-dialog id="plain">
       This is a plain dialog
-    </lens-ui-dialog>
+    </lenses-ui-dialog>
 
     <button data-dialog="delete">with backdrop</button>
 
-    <lens-ui-dialog id="delete" with-backdrop>
+    <lenses-ui-dialog id="delete" with-backdrop>
       <p>Hello world!</p>
       <button data-cancel="delete">cancel</button>
       <button data-cancel="delete" autofocus>autofocus</button>
-    </lens-ui-dialog>
+    </lenses-ui-dialog>
 
     <button data-dialog="noescape">no cancel</button>
-    <lens-ui-dialog id="noescape" no-cancel-on-esc-key no-cancel-on-outside-click>
+    <lenses-ui-dialog id="noescape" no-cancel-on-esc-key no-cancel-on-outside-click>
       <div id="test-parent">
         <button data-dialog-close="noescape">accept</button>
         <button data-dialog-cancel="noescape">cancel</button>
       </div>
-    </lens-ui-dialog>
+    </lenses-ui-dialog>
 
     <script>
 
