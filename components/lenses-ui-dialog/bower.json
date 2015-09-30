@@ -1,0 +1,13 @@
+{
+  "name": "lenses-ui-dialog",
+  "version": "0.0.1",
+  "keywords": "lenses, polymer, web-components",
+  "main": "lenses-ui-dialog.html",
+  "dependencies": {
+    "iron-component-page": "PolymerElements/iron-component-page",
+    "iron-overlay-behavior": "PolymerElements/iron-overlay-behavior"
+  },
+  "devDependencies": {
+    "web-component-tester": "Polymer/web-component-tester"
+  }
+}

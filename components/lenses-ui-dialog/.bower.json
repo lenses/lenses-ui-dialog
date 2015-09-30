@@ -1,0 +1,23 @@
+{
+  "name": "lenses-ui-dialog",
+  "keywords": "lenses, polymer, web-components",
+  "main": "lenses-ui-dialog.html",
+  "dependencies": {
+    "iron-component-page": "PolymerElements/iron-component-page",
+    "iron-overlay-behavior": "PolymerElements/iron-overlay-behavior"
+  },
+  "devDependencies": {
+    "web-component-tester": "Polymer/web-component-tester"
+  },
+  "homepage": "https://github.com/lenses/lenses-ui-dialog",
+  "_release": "71e1d3edd3",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "71e1d3edd3f7ed3274d99c233610ca292fb23bd4"
+  },
+  "_source": "git://github.com/lenses/lenses-ui-dialog.git",
+  "_target": "master",
+  "_originalSource": "lenses/lenses-ui-dialog",
+  "_direct": true
+}
